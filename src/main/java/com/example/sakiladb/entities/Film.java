@@ -18,6 +18,6 @@ public class Film {
     @Column(name = "description")
     private String desc;
 
-    @Column(name = "year")
+    @Column(name = "release_year")
     private int year;
 }
