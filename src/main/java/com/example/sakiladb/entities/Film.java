@@ -20,4 +20,16 @@ public class Film {
 
     @Column(name = "release_year")
     private int year;
+
+    //Add language string or language array
+    @Column(name = "language_id")
+    private short languageID;
+
+    @Column(name = "length")
+    private short length;
+
+    @Column(name = "rating")
+    private String rating;
+
+
 }
