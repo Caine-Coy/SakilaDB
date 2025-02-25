@@ -19,7 +19,7 @@ public class Actor {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "actor_id")
         @Setter(AccessLevel.NONE)
-        private short id;
+        private Short id;
 
         @Column(name = "first_name")
         private String firstName;
@@ -28,14 +28,14 @@ public class Actor {
         private String lastName;
 
         @Setter(AccessLevel.NONE)
-        @Formula("concat(first_name,' ',last_name")
+        @Formula("CONCAT(first_name,' ',last_name)")
         private String fullName;
 
         @ManyToMany
         @JoinTable(
                 name = "film_actor",
-                joinColumns = {@JoinColumn(name = "film_id")},
-                inverseJoinColumns = {@JoinColumn(name = "actor_id")}
+                joinColumns = {@JoinColumn(name = "actor_id")},
+                inverseJoinColumns = {@JoinColumn(name = "film_id")}
         )
         private List<Film> films = new ArrayList<>();
 }

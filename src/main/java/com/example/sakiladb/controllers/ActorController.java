@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,5 +57,27 @@ public class ActorController {
         final var savedActor = actorRepo.save(actor);
         final var newActor = actorRepo.findById(savedActor.getId()).orElseThrow(() -> new RuntimeException("Expected created actor to exist!"));
         return ActorResponse.from(newActor);
+    }
+
+    @PatchMapping("/actors")
+    public ActorResponse updateActor(@RequestBody ActorRequest data){
+        Actor actor = actorRepo.findById(data.getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "No Actor Exists with that id"));
+        actor.setFirstName(data.getFirstName());
+        actor.setLastName(data.getLastName());
+        final var films = data.getFilmIds()
+                .stream()
+                .map(filmId -> filmRepo.findById(filmId)
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "No Film Exists With That ID")))
+                .toList();
+        actor.setFilms(new ArrayList<>(films));
+        final var savedActor = actorRepo.save(actor);
+        final var newActor = actorRepo.findById(savedActor.getId()).orElseThrow(() -> new RuntimeException("Expected created actor to exist!"));
+        return ActorResponse.from(newActor);
+    }
+
+    @DeleteMapping("/actors/{id}")
+    public void deleteActor(@PathVariable Short id){
+        Actor actor = actorRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "No Actor Exists with that id"));
+        actorRepo.delete(actor);
     }
 }

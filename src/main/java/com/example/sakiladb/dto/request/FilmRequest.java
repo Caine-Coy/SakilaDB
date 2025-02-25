@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
-
 @AllArgsConstructor
 @Getter
-public class ActorRequest {
+public class FilmRequest {
     private final Short id;
-    private final String firstName;
-    private final String lastName;
-    private final List<Short> filmIds;
+    private final String title;
+    private final Byte languageId;
+    private final Byte originalLanguageID;
 
 }
