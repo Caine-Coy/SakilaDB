@@ -3,6 +3,8 @@ package com.example.sakiladb.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.time.Year;
+
 @Entity
 @Table(name = "film")
 @Getter
@@ -19,7 +21,7 @@ public class Film {
     private String desc;
 
     @Column(name = "release_year")
-    private int year;
+    private Year year;
 
     //Add language string or language array
     @Column(name = "language_id")
