@@ -14,13 +14,15 @@ public class ActorResponse {
     private final String firstName;
     private final String lastName;
     private final String fullName;
+    private final List<Film> films;
 
     public static ActorResponse from(Actor actor){
         return new ActorResponse(
                 actor.getId(),
                 actor.getFirstName(),
                 actor.getLastName(),
-                actor.getFullName()
+                actor.getFullName(),
+                actor.getFilms()
         );
     }
 }

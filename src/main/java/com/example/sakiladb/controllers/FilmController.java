@@ -15,7 +15,7 @@ import java.util.Optional;
 @RestController
 public class FilmController {
 
-    private FilmRepo filmRepo;
+    private final FilmRepo filmRepo;
 
     @Autowired
     public FilmController(FilmRepo filmRepo){
