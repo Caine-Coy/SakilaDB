@@ -16,9 +16,9 @@ public class FilmRequest {
     @NotNull(groups= Create.class)
     @Size(min = 1, max = 45)
     private final String title;
-    @NotNull(groups= Create.class)
+    //@NotNull(groups= Create.class)
     private final Byte languageId;
-    @NotNull(groups= Create.class)
+    //@NotNull(groups= Create.class)
     private final Byte originalLanguageID;
 
 }

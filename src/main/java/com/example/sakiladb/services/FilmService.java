@@ -35,8 +35,8 @@ public class FilmService {
     public Film createFilm(String title, Byte languageId, Byte originalLanguageID) {
         Film film = new Film();
         film.setTitle(title);
-        film.setLanguageID(languageId);
-        film.setOriginalLanguageId(originalLanguageID);
+        film.setLanguageID((byte)1);
+        film.setOriginalLanguageId((byte)1);
         filmRepo.save(film);
         return film;
     }
