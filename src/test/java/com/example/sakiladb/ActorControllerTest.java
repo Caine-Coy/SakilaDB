@@ -14,7 +14,6 @@ import java.util.List;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
-
 public class ActorControllerTest {
 
     static List<Actor> actors = List.of(

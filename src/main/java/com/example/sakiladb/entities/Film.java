@@ -1,9 +1,7 @@
 package com.example.sakiladb.entities;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.Formula;
 
 import java.time.Year;
@@ -12,6 +10,8 @@ import java.time.Year;
 @Table(name = "film")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Film {
     @Column(name = "language_id")
     private Byte languageID;
     @ManyToOne()
-    @JoinColumn(name = "language_id", insertable = false,updatable = false)
+    @JoinColumn(name = "language_id", insertable = false, updatable = false)
     private Language language;
 
     @Column(name = "length")

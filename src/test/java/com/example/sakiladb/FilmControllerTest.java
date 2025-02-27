@@ -57,7 +57,7 @@ public class FilmControllerTest {
         doReturn(film).when(service).createFilm(film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId());
 
         final var expectedResponse = FilmResponse.from(film);
-        final var actualResponse = controller.createFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(),film.getOriginalLanguageId(), film.getYear(),film.getDesc()));
+        final var actualResponse = controller.createFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc()));
 
         Assertions.assertEquals(expectedResponse.getTitle(), actualResponse.getTitle());
         //Not sure use save
@@ -66,10 +66,10 @@ public class FilmControllerTest {
     @Test
     public void updateActorReturnsActorResponse() {
         Film film = films.getFirst();
-        doReturn(film).when(service).updateFilm(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(),film.getDesc());
+        doReturn(film).when(service).updateFilm(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc());
 
         final var expectedResponse = FilmResponse.from(film);
-        final var actualResponse = controller.updateFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(),film.getDesc()));
+        final var actualResponse = controller.updateFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc()));
 
         Assertions.assertEquals(expectedResponse.getTitle(), actualResponse.getTitle());
     }
