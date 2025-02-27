@@ -64,7 +64,9 @@ public class FilmController {
                 data.getId(),
                 data.getTitle(),
                 data.getLanguageId(),
-                data.getOriginalLanguageID()
+                data.getOriginalLanguageID(),
+                data.getYear(),
+                data.getDescription()
         );
         return FilmResponse.from(film);
     }

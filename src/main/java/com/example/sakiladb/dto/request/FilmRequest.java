@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.Year;
 import java.util.List;
 @AllArgsConstructor
 @Getter
@@ -20,5 +21,6 @@ public class FilmRequest {
     private final Byte languageId;
     //@NotNull(groups= Create.class)
     private final Byte originalLanguageID;
-
+    private final Year year;
+    private final String description;
 }

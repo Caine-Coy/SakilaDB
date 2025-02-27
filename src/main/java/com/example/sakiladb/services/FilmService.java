@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.Year;
 import java.util.List;
 
 @Service
@@ -41,11 +42,13 @@ public class FilmService {
         return film;
     }
 
-    public Film updateFilm(Short id,String title,Byte languageId,Byte originalLanguageID){
+    public Film updateFilm(Short id, String title, Byte languageId, Byte originalLanguageID, Year year, String description){
         Film film = filmRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "No Film Exists with that id"));
         film.setTitle(title);
         film.setLanguageID((byte) 1);
         film.setOriginalLanguageId((byte) 1);
+        film.setYear(year);
+        film.setDesc(description);
         final var savedFilm = filmRepo.save(film);
         final var newFilm = filmRepo.findById(savedFilm.getId()).orElseThrow(() -> new RuntimeException("Expected created film to exist!"));
         return newFilm;
