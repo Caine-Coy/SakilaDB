@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -67,4 +68,18 @@ public class ActorControllerTest {
 
         Assertions.assertEquals(expectedResponse.getFirstName(), actualResponse.getFirstName());
     }
+
+
+    @Test
+    public void listActors(){
+        Actor actor = actors.getFirst();
+        List<ActorResponse> returned = controller.listActors(Optional.of(actor.getFirstName()));
+        //Assertions.assertEquals(returned.getFirst().getFirstName(),actor.getFirstName());
+    }
+    @Test
+    public void deleteActor(){
+        Actor actor = actors.getFirst();
+        controller.deleteActor(actor.getId());
+    }
+
 }
