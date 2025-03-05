@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Year;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -57,7 +58,7 @@ public class FilmControllerTest {
         doReturn(film).when(service).createFilm(film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId());
 
         final var expectedResponse = FilmResponse.from(film);
-        final var actualResponse = controller.createFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc()));
+        final var actualResponse = controller.createFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc()));
 
         Assertions.assertEquals(expectedResponse.getTitle(), actualResponse.getTitle());
         //Not sure use save
@@ -66,11 +67,23 @@ public class FilmControllerTest {
     @Test
     public void updateActorReturnsActorResponse() {
         Film film = films.getFirst();
-        doReturn(film).when(service).updateFilm(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc());
+        doReturn(film).when(service).updateFilm(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc());
 
         final var expectedResponse = FilmResponse.from(film);
-        final var actualResponse = controller.updateFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getYear(), film.getDesc()));
+        final var actualResponse = controller.updateFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc()));
 
         Assertions.assertEquals(expectedResponse.getTitle(), actualResponse.getTitle());
     }
+    @Test
+    public void testListPartialFilms(){
+        controller.listPartialFilms(Optional.of("TEST"));
+    }
+
+    @Test
+    public void deleteActor(){
+        Film film = films.getFirst();
+        controller.deleteFilm(film.getId());
+    }
+
+
 }
