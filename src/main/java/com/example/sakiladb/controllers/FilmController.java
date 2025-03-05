@@ -25,6 +25,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/films")
+//remove!
+@CrossOrigin(origins = "*")
 public class FilmController {
 
     FilmService filmService;
@@ -65,7 +67,7 @@ public class FilmController {
                 data.getTitle(),
                 data.getLanguageId(),
                 data.getOriginalLanguageID(),
-                data.getYear(),
+                data.getReleaseYear(),
                 data.getDescription()
         );
         return FilmResponse.from(film);
