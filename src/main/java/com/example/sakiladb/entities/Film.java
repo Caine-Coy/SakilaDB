@@ -26,7 +26,7 @@ public class Film {
     private String desc;
 
     @Column(name = "release_year")
-    private Year year;
+    private Year releaseYear;
 
     //Add language string or language array
     @Column(name = "language_id")

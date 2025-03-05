@@ -21,6 +21,6 @@ public class FilmRequest {
     private final Byte languageId;
     //@NotNull(groups= Create.class)
     private final Byte originalLanguageID;
-    private final Year year;
+    private final Year releaseYear;
     private final String description;
 }

@@ -47,7 +47,7 @@ public class FilmService {
         film.setTitle(title);
         film.setLanguageID((byte) 1);
         film.setOriginalLanguageId((byte) 1);
-        film.setYear(year);
+        film.setReleaseYear(year);
         film.setDesc(description);
         final var savedFilm = filmRepo.save(film);
         final var newFilm = filmRepo.findById(savedFilm.getId()).orElseThrow(() -> new RuntimeException("Expected created film to exist!"));

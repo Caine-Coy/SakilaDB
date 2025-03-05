@@ -18,7 +18,7 @@ public class PartialFilmResponse {
         return new PartialFilmResponse(
                     film.getId(),
                     film.getTitle(),
-                    film.getYear(),
+                    film.getReleaseYear(),
                     film.getLanguage()
                 );
     }
