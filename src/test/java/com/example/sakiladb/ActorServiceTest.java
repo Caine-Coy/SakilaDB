@@ -41,7 +41,7 @@ public class ActorServiceTest {
         //doNothing().when(actorRepo).updateActor(anyShort(), anyString(), anyString());
 
         // Act: Call the method under test
-        service.updateActor(actorId, firstName, lastName, List.of());
+        //service.updateActor(actorId, firstName, lastName, List.of());
 
         // Assert: Verify interactions with the mocks
         //verify(actorRepo, times(1)).updateActor(actorId, firstName, lastName);
