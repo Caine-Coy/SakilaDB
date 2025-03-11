@@ -23,6 +23,7 @@ import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/actors")
+@CrossOrigin(origins = "*")
 public class ActorController {
     private final ActorService actorService;
     @Autowired
