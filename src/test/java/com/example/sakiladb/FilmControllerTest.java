@@ -70,7 +70,7 @@ public class FilmControllerTest {
         doReturn(film).when(service).updateFilm(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc());
 
         final var expectedResponse = FilmResponse.from(film);
-        final var actualResponse = controller.updateFilm(new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc()));
+        final var actualResponse = controller.updateFilm(film.getId(), new FilmRequest(film.getId(), film.getTitle(), film.getLanguageID(), film.getOriginalLanguageId(), film.getReleaseYear(), film.getDesc()));
 
         Assertions.assertEquals(expectedResponse.getTitle(), actualResponse.getTitle());
     }
