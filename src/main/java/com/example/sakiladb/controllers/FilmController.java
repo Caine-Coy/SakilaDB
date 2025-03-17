@@ -60,10 +60,13 @@ public class FilmController {
         return FilmResponse.from(newFilm);
     }
 
-    @PatchMapping
-    public FilmResponse updateFilm(@Validated(Update.class) @RequestBody FilmRequest data){
+    @PatchMapping("/{id}")
+    public FilmResponse updateFilm(@PathVariable Short id, @Validated(Update.class) @RequestBody FilmRequest data) {
+        if (!id.equals(data.getId())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Path ID must match request body ID");
+        }
         Film film = filmService.updateFilm(
-                data.getId(),
+                id,
                 data.getTitle(),
                 data.getLanguageId(),
                 data.getOriginalLanguageID(),
