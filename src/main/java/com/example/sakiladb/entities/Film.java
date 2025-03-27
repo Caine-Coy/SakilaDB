@@ -2,8 +2,6 @@ package com.example.sakiladb.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Formula;
-
 import java.time.Year;
 
 @Entity

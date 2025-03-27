@@ -1,20 +1,14 @@
 package com.example.sakiladb;
 
-import com.example.sakiladb.controllers.ActorController;
 import com.example.sakiladb.controllers.FilmController;
-import com.example.sakiladb.dto.request.ActorRequest;
 import com.example.sakiladb.dto.request.FilmRequest;
-import com.example.sakiladb.dto.response.ActorResponse;
 import com.example.sakiladb.dto.response.FilmResponse;
-import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.entities.Film;
-import com.example.sakiladb.services.ActorService;
 import com.example.sakiladb.services.FilmService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.time.Year;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,10 +1,8 @@
 package com.example.sakiladb.dto.response;
 
-import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.entities.Film;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @AllArgsConstructor
 @Getter

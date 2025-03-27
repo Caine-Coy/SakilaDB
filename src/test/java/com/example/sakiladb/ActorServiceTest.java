@@ -1,6 +1,5 @@
 package com.example.sakiladb;
 
-import com.example.sakiladb.controllers.ActorController;
 import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.repos.ActorRepo;
 import com.example.sakiladb.repos.FilmRepo;
@@ -12,8 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
-
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class) // Enable Mockito support
 public class ActorServiceTest {

@@ -1,6 +1,5 @@
 package com.example.sakiladb.services;
 
-import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.entities.Film;
 import com.example.sakiladb.repos.ActorRepo;
 import com.example.sakiladb.repos.FilmRepo;

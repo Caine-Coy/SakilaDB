@@ -1,25 +1,14 @@
 package com.example.sakiladb.controllers;
 
-import com.example.sakiladb.dto.ValidationGroup;
 import com.example.sakiladb.dto.ValidationGroup.Create;
-import com.example.sakiladb.dto.ValidationGroup.Update;
-import com.example.sakiladb.dto.request.ActorRequest;
 import com.example.sakiladb.dto.request.FilmRequest;
-import com.example.sakiladb.dto.response.ActorResponse;
 import com.example.sakiladb.dto.response.FilmResponse;
 import com.example.sakiladb.dto.response.PartialFilmResponse;
-import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.entities.Film;
-import com.example.sakiladb.entities.Language;
-import com.example.sakiladb.repos.FilmRepo;
 import com.example.sakiladb.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,15 +1,10 @@
 package com.example.sakiladb.services;
 
-import com.example.sakiladb.dto.ValidationGroup;
-import com.example.sakiladb.dto.request.ActorRequest;
-import com.example.sakiladb.dto.response.ActorResponse;
 import com.example.sakiladb.entities.Actor;
 import com.example.sakiladb.repos.ActorRepo;
 import com.example.sakiladb.repos.FilmRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
