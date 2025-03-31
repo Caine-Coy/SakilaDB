@@ -8,6 +8,7 @@ public class SakilaFilmDatabaseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaFilmDatabaseApplication.class, args);
+		System.out.println("Launched");
 	}
 
 }

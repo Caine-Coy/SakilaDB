@@ -14,7 +14,7 @@ public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "film_id")
-    @Setter(AccessLevel.NONE)
+    @Setter()
     private short id;
 
     @Column(name = "title")

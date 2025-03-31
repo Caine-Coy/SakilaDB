@@ -18,7 +18,7 @@ public class Actor {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "actor_id")
-        @Setter(AccessLevel.NONE)
+        @Setter()
         private Short id;
 
         @Column(name = "first_name")
